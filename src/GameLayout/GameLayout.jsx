@@ -6,7 +6,7 @@ export function GameLayout({restart, isDraw, isGameEnded, field}) {
         <div className="container">
             <button className="btn-restart" onClick={restart}>Заново
             </button>
-            <button className="btn-restart btn-color" disabled={isDraw || isGameEnded || field.some((param) => param !== '') ?  true : null} onClick={() => store.dispatch('TOGGLE_GAME_STATUS')}>Сменить игрока
+            <button className="btn-restart btn-color" disabled={isDraw || isGameEnded || field.some((param) => param !== '') ?  true : null} onClick={() => store.dispatch({type: 'TOGGLE_GAME_STATUS'})}>Сменить игрока
             </button>
         </div>)
 }
